@@ -32,5 +32,9 @@ def home():
     return "Agrinetra MySQL Server (v2) is Running with Blueprints!"
 
 if __name__ == '__main__':
+    # Initialize Database
+    from db_utils import init_db
+    init_db()
+
     # Run on all interfaces to allow access from emulator/devices
     app.run(host='0.0.0.0', port=5000, debug=True)
